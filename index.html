@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta  -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff"/>
+    <!-- title -->
+    <title>Crypto Calculator</title>
+    <!-- icon -->
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/maskable_icon_x192.png">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- jquery -->
+    <script src="/js/jquery-3.7.1.js"></script>
+    <!-- manifest -->
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav nav-pills justify-content-center my-3" role="tablist">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-spot" role="tab">Spot</button>
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-future" role="tab">Future</button>
+        </div>
+    </nav>
+
+    <div class="container tab-content">
+        <div class="tab-pane fade show active" id="nav-spot" role="tabpanel" tabindex="0">
+            <form id="spotForm">
+                <div class="mb-3">
+                    <label for="cPrice" class="form-label">Buying Price</label>
+                    <input type="number" class="form-control" id="cPriceS" required step="any">
+                    <div class="form-text">This is the buying price of crypto.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="usdtPrice" class="form-label">USDT Amount</label>
+                    <input type="number" class="form-control" id="usdtPriceS" required step="any">
+                    <div class="form-text">This is the amount of USDT invested in crypto.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="cQty">Crypto Qty</label>
+                    <input type="number" class="form-control" id="cQtyS" required step="any">
+                    <div class="form-text">This is your crypto quantity.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="tp">Sell Price</label>
+                    <input type="number" class="form-control" id="tpS" required step="any">
+                    <div class="form-text">This is the selling price of crypto.</div>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary w-100">Calculate</button>
+                </div>
+                <h3 class="p-3 rounded text-bg-dark" id="spotOutput">
+                    Profit = <span class="text-danger">Null</span>
+                    <br>
+                    Percentage = <span class="text-danger">Null</span>
+                </h3>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="nav-future" role="tabpanel" tabindex="0">
+            <form id="futureForm">
+                <div class="mb-3">
+                    <label for="cPosition" class="form-label">Trade Position</label>
+                    <select class="form-select" id="cPosition">
+                        <option value="long">Long</option>
+                        <option value="short">Short</option>
+                    </select>
+                    <div class="form-text">This is the trade positon short/long.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="s" class="form-label">Trade point</label>
+                    <input type="number" class="form-control" id="cPriceF" required step="any">
+                    <div class="form-text">This is the buying price of crypto.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="usdtPriceF" class="form-label">USDT Amount</label>
+                    <input type="number" class="form-control" id="usdtPriceF" required step="any">
+                    <div class="form-text">This is the amount of USDT invested in crypto.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="cQtyF">Crypto Qty</label>
+                    <input type="number" class="form-control" id="cQtyF" required step="any">
+                    <div class="form-text">This is your crypto quantity.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="lvg" class="form-label">Leverage</label>
+                    <input type="number" value="1" max="125" min="1" class="form-control" id="lvg" required step="any">
+                    <div class="form-text">This is the leverage taken from the exchange.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="tpF">Take Profit</label>
+                    <input type="number" class="form-control" id="tpF" required step="any">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="slF">Stop Loss</label>
+                    <input type="number" class="form-control" id="slF" required step="any">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary w-100">Calculate</button>
+                </div>
+                <h3 class="p-3 rounded text-bg-dark" id="futureOutput">
+                    Reward = <span class="text-success">Null</span>
+                    <br>
+                    Risk = <span class="text-danger">Null</span>
+                    <br>
+                    R:R = <span class="text-primary">Null</span>
+                </h3>
+            </form>
+        </div>
+    </div>
+ 
+
+
+    <!-- script -->
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/myScript.js"></script>
+    <script src="/sw.js"></script>
+</body>
+
+</html>
